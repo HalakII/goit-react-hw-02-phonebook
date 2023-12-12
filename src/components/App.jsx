@@ -1,5 +1,5 @@
 import { Component } from 'react';
-import { nanoid } from 'nanoid';
+// import { nanoid } from 'nanoid';
 import { ContactsList } from './ContactsList/ContactsList';
 import contactNumbers from '../data/contacts.json';
 import { SectionTitle } from './SectionTitle/SectionTitle';

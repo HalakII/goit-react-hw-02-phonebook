@@ -3,13 +3,7 @@ export const ContactsFilter = () => {
   return (
     <label className={css.label}>
       Find contacts by name
-      <input
-        className={css.input}
-        type="text"
-        name="filter"
-        //   value={value}
-        //   onChange={onChange}
-      />
+      <input className={css.input} type="text" name="filter" />
     </label>
   );
 };
