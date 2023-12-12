@@ -11,8 +11,10 @@ export class App extends Component {
   state = {
     contacts: [...contactNumbers],
     filter: '',
-    name: '',
-    number: '',
+  };
+  formSubmitHandler = data => {
+    // const { contacts } = this.state;
+    console.log(data);
   };
   render() {
     return (
@@ -27,7 +29,7 @@ export class App extends Component {
         }}
       >
         <SectionTitle title="Phonebook" />
-        <ContactForm name={this.state.name} number={this.state.number} />
+        <ContactForm onSubmit={this.formSubmitHandler} />
         <SectionSubtitle subtitle="Contacts" />
         <ContactsFilter />
         <ContactsList contacts={this.state.contacts} />
