@@ -32,17 +32,17 @@
 }
 .button_add {
   cursor: pointer;
-  border: 2px solid rgb(238, 131, 255);
+  border: 2px solid rgb(238, 9, 165);
   border-radius: 5px;
   font-weight: 700;
-  background-color: rgb(238, 131, 255);
+  background-color: rgb(238, 9, 165);
 }
 
 .button_add:hover,
 .button_add:focus {
   cursor: pointer;
-  border: 2px solid rgb(238, 9, 165);
-  background-color: rgb(238, 9, 165);
+  border: 2px solid rgb(238, 131, 255);
+  background-color: rgb(238, 131, 255);
   font-weight: 700;
   color: white;
   border-radius: 5px;

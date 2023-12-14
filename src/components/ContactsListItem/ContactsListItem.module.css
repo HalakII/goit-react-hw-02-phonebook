@@ -22,17 +22,17 @@
 
 .button_delete {
   cursor: pointer;
-  border: 2px solid green;
+  border: 2px solid rgb(238, 9, 165);
   border-radius: 5px;
   font-weight: 700;
-  background-color: green;
+  background-color: rgb(238, 9, 165);
 }
 
 .button_delete:hover,
 .button_delete:focus {
   cursor: pointer;
-  border: 2px solid greenyellow;
-  background-color: greenyellow;
+  border: 2px solid rgb(238, 131, 255);
+  background-color: rgb(238, 131, 255);
   font-weight: 700;
   border-radius: 5px;
   color: white;

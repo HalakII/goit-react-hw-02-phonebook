@@ -1,5 +1,5 @@
 import { Component } from 'react';
-// import { nanoid } from 'nanoid';
+import { nanoid } from 'nanoid';
 import { ContactsList } from './ContactsList/ContactsList';
 import contactNumbers from '../data/contacts.json';
 import { SectionTitle } from './SectionTitle/SectionTitle';
@@ -12,11 +12,38 @@ export class App extends Component {
     contacts: [...contactNumbers],
     filter: '',
   };
-  formSubmitHandler = data => {
-    // const { contacts } = this.state;
-    console.log(data);
+
+  createNewContact = data => {
+    const { contacts } = this.state;
+    const newContact = {
+      ...data,
+      id: nanoid(),
+    };
+    this.setState({ contacts: [newContact, ...contacts] });
   };
+
+  deleteContact = deleteId => {
+    this.setState({
+      contacts: this.state.contacts.filter(contact => contact.id !== deleteId),
+    });
+    // this.setState({ filter: '' });
+  };
+
+  handleChangeFilter = event => {
+    const value = event.currentTarget.value.toLowerCase();
+    this.setState({ filter: value });
+  };
+
+  filterContacts = () => {
+    const { contacts, filter } = this.state;
+    const normalizedFilter = filter.toLowerCase();
+    return contacts.filter(contact =>
+      contact.name.toLowerCase().includes(normalizedFilter)
+    );
+  };
+
   render() {
+    const filteredContacts = this.filterContacts();
     return (
       <div
         style={{
@@ -29,10 +56,16 @@ export class App extends Component {
         }}
       >
         <SectionTitle title="Phonebook" />
-        <ContactForm onSubmit={this.formSubmitHandler} />
+        <ContactForm onSubmit={this.createNewContact} />
         <SectionSubtitle subtitle="Contacts" />
-        <ContactsFilter />
-        <ContactsList contacts={this.state.contacts} />
+        <ContactsFilter
+          value={this.state.filter}
+          onFilterChange={this.handleChangeFilter}
+        />
+        <ContactsList
+          filteredContacts={filteredContacts}
+          onDeleteContact={this.deleteContact}
+        />
       </div>
     );
   }
