@@ -1,4 +1,7 @@
 import { Component } from 'react';
+import 'react-notifications/lib/notifications.css';
+import { NotificationContainer } from 'react-notifications';
+import { NotificationManager } from 'react-notifications';
 import { nanoid } from 'nanoid';
 import { ContactsList } from './ContactsList/ContactsList';
 import contactNumbers from '../data/contacts.json';
@@ -19,6 +22,13 @@ export class App extends Component {
       ...data,
       id: nanoid(),
     };
+    const contactExists = contacts.some(
+      contact => contact.name === newContact.name
+    );
+    if (contactExists) {
+      NotificationManager.info(`${data.name} is already in contacts.`);
+      return;
+    }
     this.setState({ contacts: [newContact, ...contacts] });
   };
 
@@ -55,6 +65,7 @@ export class App extends Component {
           color: '#010101',
         }}
       >
+        <NotificationContainer />
         <SectionTitle title="Phonebook" />
         <ContactForm onSubmit={this.createNewContact} />
         <SectionSubtitle subtitle="Contacts" />
