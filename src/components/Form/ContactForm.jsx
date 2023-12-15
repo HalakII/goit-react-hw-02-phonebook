@@ -37,6 +37,8 @@ export class ContactForm extends Component {
             className={css.input}
             type="text"
             name="name"
+            placeholder="Contact name"
+            pattern="^[a-zA-Zа-яА-Я]+(([' \-][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я]*)*$"
             value={this.state.name}
             onChange={this.handleChange}
             required
@@ -48,6 +50,8 @@ export class ContactForm extends Component {
             className={css.input}
             type="tel"
             name="number"
+            placeholder="123-45-89"
+            pattern="[0-9]{3}-[0-9]{2}-[0-9]{2}"
             value={this.state.number}
             onChange={this.handleChange}
             required

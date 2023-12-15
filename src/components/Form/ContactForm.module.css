@@ -40,7 +40,7 @@
   -moz-box-shadow: 6px 6px 9px -1px rgba(0, 0, 0, 0.47);
   font-weight: 700;
   background-color: #790df2;
-  color: #d7d4f7;
+  color: white;
 }
 
 .button_add:hover,
@@ -48,7 +48,6 @@
   cursor: pointer;
   border: 2px solid #7e75fa;
   background-color: #7e75fa;
-  color: white;
   border-radius: 10px;
 }
 
