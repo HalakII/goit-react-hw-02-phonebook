@@ -20,13 +20,14 @@
 .button_delete:hover,
 .button_delete:focus {
   cursor: pointer;
-  border: 2px solid #9868f3;
-  background-color: #9868f3;
+  border: 2px solid #7433ee;
+  background-color: #7433ee;
   font-weight: 700;
   border-radius: 5px;
   color: white;
 }
-.icon {
+.icon,
+.iconTel {
   fill: #7433ee;
 }
 .icon:hover,

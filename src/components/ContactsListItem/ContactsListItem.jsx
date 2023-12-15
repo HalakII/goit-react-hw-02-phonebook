@@ -3,7 +3,7 @@ import { MdDeleteForever, MdOutlineContactPhone } from 'react-icons/md';
 export const ContactsListItem = ({ id, name, number, onDeleteContact }) => {
   return (
     <li className={css.item}>
-      {<MdOutlineContactPhone className={css.icon} />}
+      {<MdOutlineContactPhone className={css.iconTel} />}
       <span className={css.name}>{name}:</span>
       <span className={css.number}>{number}</span>
       <button
