@@ -9,6 +9,7 @@ import { SectionTitle } from './SectionTitle/SectionTitle';
 import { SectionSubtitle } from './SectionSubtitle/SectionSubtitle';
 import { ContactForm } from './Form/ContactForm';
 import { ContactsFilter } from './Filter/Filter';
+import css from './App.module.css'
 
 export class App extends Component {
   state = {
@@ -55,16 +56,7 @@ export class App extends Component {
   render() {
     const filteredContacts = this.filterContacts();
     return (
-      <div
-        style={{
-          height: '100vh',
-          display: 'flex',
-          flexDirection: 'column',
-          justifyContent: 'center',
-          alignItems: 'center',
-          color: '#010101',
-        }}
-      >
+      <div className={css.wrapper}>
         <NotificationContainer />
         <SectionTitle title="Phonebook" />
         <ContactForm onSubmit={this.createNewContact} />

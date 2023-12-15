@@ -1,5 +1,6 @@
 import css from './ContactForm.module.css';
 import { Component } from 'react';
+import { FcBusinessContact } from 'react-icons/fc';
 
 export class ContactForm extends Component {
   state = {
@@ -29,6 +30,7 @@ export class ContactForm extends Component {
   render() {
     return (
       <form className={css.form_wrapper} onSubmit={this.handleSubmit}>
+        <FcBusinessContact className={css.iconContact} />
         <label className={css.label}>
           Name
           <input
