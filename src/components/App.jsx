@@ -9,7 +9,7 @@ import { SectionTitle } from './SectionTitle/SectionTitle';
 import { SectionSubtitle } from './SectionSubtitle/SectionSubtitle';
 import { ContactForm } from './Form/ContactForm';
 import { ContactsFilter } from './Filter/Filter';
-import css from './App.module.css'
+import css from './App.module.css';
 
 export class App extends Component {
   state = {
@@ -37,7 +37,7 @@ export class App extends Component {
     this.setState({
       contacts: this.state.contacts.filter(contact => contact.id !== deleteId),
     });
-    // this.setState({ filter: '' });
+    this.setState({ filter: '' });
   };
 
   handleChangeFilter = event => {
