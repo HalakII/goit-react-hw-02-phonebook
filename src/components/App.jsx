@@ -24,20 +24,25 @@ export class App extends Component {
       id: nanoid(),
     };
     const contactExists = contacts.some(
-      contact => contact.name === newContact.name
+      contact => contact.name.toLowerCase() === newContact.name.toLowerCase()
     );
     if (contactExists) {
       NotificationManager.info(`${data.name} is already in contacts.`);
       return;
     }
-    this.setState({ contacts: [newContact, ...contacts] });
+    this.setState(prevState => {
+      return {
+        contacts: [newContact, ...prevState.contacts],
+      };
+    });
   };
 
   deleteContact = deleteId => {
-    this.setState({
-      contacts: this.state.contacts.filter(contact => contact.id !== deleteId),
+    this.setState(prevState => {
+      return {
+        contacts: prevState.contacts.filter(contact => contact.id !== deleteId),
+      };
     });
-    this.setState({ filter: '' });
   };
 
   handleChangeFilter = event => {

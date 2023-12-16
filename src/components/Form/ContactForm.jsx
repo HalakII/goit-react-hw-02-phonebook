@@ -37,8 +37,8 @@ export class ContactForm extends Component {
             className={css.input}
             type="text"
             name="name"
-            placeholder="Contact name"
             pattern="^[a-zA-Zа-яА-Я]+(([' \-][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я]*)*$"
+            title="Name may contain only letters, apostrophe, dash and spaces. For example Adrian, Jacob Mercer, Charles de Batz de Castelmore d'Artagnan"
             value={this.state.name}
             onChange={this.handleChange}
             required
@@ -50,8 +50,8 @@ export class ContactForm extends Component {
             className={css.input}
             type="tel"
             name="number"
-            placeholder="123-45-89"
-            pattern="[0-9]{3}-[0-9]{2}-[0-9]{2}"
+            pattern="\+?\d{1,4}?[ .\-\s]?\(?\d{1,3}?\)?[ .\-\s]?\d{1,4}[ .\-\s]?\d{1,4}[ .\-\s]?\d{1,9}"
+            title="Phone number must be digits and can contain spaces, dashes, parentheses and can start with +"
             value={this.state.number}
             onChange={this.handleChange}
             required
